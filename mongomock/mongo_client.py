@@ -134,7 +134,7 @@ class MongoClient(object):
             db_store = self._store[name]
             db = self._database_accesses[name] = Database(
                 self, name, read_preference=read_preference or self.read_preference,
-                codec_options=self._codec_options, _store=db_store)
+                codec_options=codec_options or self._codec_options, _store=db_store)
         return db
 
     def get_default_database(self):
